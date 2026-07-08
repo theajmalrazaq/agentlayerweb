@@ -1,0 +1,36 @@
+{
+	"name": "agentlayerweb",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"description": "AgentLayerWeb - The interaction layer for AI-native web applications.",
+	"license": "MIT",
+	"workspaces": [
+		"packages/*",
+		"examples/*",
+		"Website"
+	],
+	"scripts": {
+		"build": "bun run --cwd packages/core build && bun run --cwd packages/react build && bun run --cwd packages/vue build && bun run --cwd packages/svelte build && bun run --cwd packages/vite-plugin build && bun run --cwd Website build && bun run --cwd examples/nextjs build && bun run --cwd examples/vite build",
+		"test": "bun run --filter \"*\" test",
+		"dev": "bun run --filter \"*\" dev",
+		"benchmark:ai": "node performance/agent-llm-benchmark.js",
+		"lint": "biome lint --write --unsafe",
+		"lint:fix": "next lint --fix && biome lint --write --unsafe",
+		"format": "biome format --write",
+		"lint:check": "npx biome check . > check.txt 2>&1 || true",
+		"rmcm": "find . -type f \\( -name '*.ts' -o -name '*.tsx' \\) -not -path './node_modules/*' -exec rmcm -i -l typescript -c 1 {} +"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.2",
+		"@types/react": "^18.2.0",
+		"@types/react-dom": "^18.2.0",
+		"playwright": "^1.61.1",
+		"typescript": "^5.3.3",
+		"vitest": "^1.3.1"
+	},
+	"dependencies": {
+		"browser-use-sdk": "^3.8.4",
+		"dotenv": "^17.4.2"
+	}
+}

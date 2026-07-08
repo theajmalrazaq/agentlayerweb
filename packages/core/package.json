@@ -1,0 +1,48 @@
+{
+	"name": "@agentlayerweb/core",
+	"version": "0.1.3",
+	"description": "Core client-side semantic annotations and validation for AgentLayerWeb — make your web app natively understandable to AI agents",
+	"license": "MIT",
+	"homepage": "https://github.com/theajmalrazaq/agentlayerweb#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/theajmalrazaq/agentlayerweb.git",
+		"directory": "packages/core"
+	},
+	"keywords": [
+		"ai",
+		"agents",
+		"browser-use",
+		"webmcp",
+		"semantic",
+		"annotations",
+		"agentlayerweb"
+	],
+	"files": [
+		"dist",
+		"src",
+		"README.md"
+	],
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"type": "module",
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --dts --clean",
+		"dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+		"test": "vitest run",
+		"prepublishOnly": "npm run build"
+	},
+	"devDependencies": {
+		"tsup": "^8.5.1",
+		"typescript": "^5.3.3",
+		"vitest": "^1.3.1"
+	}
+}

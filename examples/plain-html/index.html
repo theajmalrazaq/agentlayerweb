@@ -1,0 +1,54 @@
+<!-- biome-ignore-all lint: generated plain HTML demo -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentLayerWeb Plain HTML Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#0f172a] text-[#f8fafc] p-10 font-sans">
+    <div class="bg-[#1e293b] p-[30px] rounded-[12px] max-w-[400px]">
+      <h2>Beachfront Villa</h2>
+      <p>Price: $2,500,000 AUD</p>
+
+      <!-- Button to checkout, which we will attach agent attributes to -->
+      <button
+        id="buy-btn"
+        class="bg-[#3b82f6] text-white border-none py-2.5 px-5 rounded-[6px] cursor-pointer font-semibold"
+      >
+        Purchase Property
+      </button>
+    </div>
+
+    <script type="module">
+      // Import the compiled agent package directly from core package dist directory
+      import { agent } from "../../packages/core/dist/index.js";
+
+      // 1. Attach page attributes to body
+      agent.attach(
+        document.body,
+        agent.page({
+          id: "listing_detail",
+          title: "Listing Details Page",
+          purpose: "View and purchase property",
+        }),
+      );
+
+      // 2. Attach action attributes to buy button
+      const btn = document.querySelector("#buy-btn");
+      agent.attach(
+        btn,
+        agent.action({
+          id: "purchase_listing",
+          intent: "checkout",
+          priority: "primary",
+          description: "Purchases this listing immediately",
+          confirmation: true,
+        }),
+      );
+
+      console.log("Successfully annotated button element:", btn.outerHTML);
+    </script>
+  </body>
+</html>

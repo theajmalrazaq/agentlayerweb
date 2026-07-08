@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+:root {
+	--heat-4: rgba(0, 54, 254, 0.04);
+	--heat-10: rgba(0, 54, 254, 0.1);
+	--heat-20: rgba(0, 54, 254, 0.2);
+	--heat-100: #0036fe;
+	--accent-black: #262626;
+	--accent-white: #ffffff;
+	--accent-amethyst: #9061ff;
+	--accent-bluetron: #2a6dfb;
+	--accent-crimson: #eb3424;
+	--accent-forest: #42c366;
+	--accent-honey: #ecb730;
+	--border-faint: rgba(38, 38, 38, 0.03);
+	--border-muted: rgba(38, 38, 38, 0.06);
+	--border-loud: rgba(38, 38, 38, 0.12);
+	--background-lighter: #f4f4f5;
+	--background-base: #ffffff;
+}
+
+@theme {
+	--color-heat-4: var(--heat-4);
+	--color-heat-10: var(--heat-10);
+	--color-heat-20: var(--heat-20);
+	--color-heat-100: var(--heat-100);
+	--color-accent-black: var(--accent-black);
+	--color-accent-white: var(--accent-white);
+	--color-accent-amethyst: var(--accent-amethyst);
+	--color-accent-bluetron: var(--accent-bluetron);
+	--color-accent-crimson: var(--accent-crimson);
+	--color-accent-forest: var(--accent-forest);
+	--color-accent-honey: var(--accent-honey);
+	--color-border-faint: var(--border-faint);
+	--color-border-muted: var(--border-muted);
+	--color-border-loud: var(--border-loud);
+	--color-background-lighter: var(--background-lighter);
+	--color-background-base: var(--background-base);
+
+	/* Font mappings */
+	--font-sans: var(--font-google-sans-flex);
+	--font-mono: monospace;
+	--font-pixel-grid: var(--font-geist-pixel-grid), monospace;
+	--font-pixel-circle: var(--font-geist-pixel-circle), monospace;
+	--font-pixel-triangle: var(--font-geist-pixel-triangle), monospace;
+	--font-pixel-line: var(--font-geist-pixel-line), monospace;
+
+	/* Force sharp corners for standard radii */
+	--radius-none: 0px;
+	--radius-sm: 0px;
+	--radius-md: 0px;
+	--radius-lg: 0px;
+	--radius-xl: 0px;
+	--radius-2xl: 0px;
+	--radius-3xl: 0px;
+	--radius-full: 0px;
+
+	/* Custom explicit radii used by components (set to 0px to remove all roundness) */
+	--radius-6: 0px;
+	--radius-12: 0px;
+
+	/* Custom spacing and sizes to match landing page values */
+	--spacing-0: 0px;
+	--spacing-1: 1px;
+	--spacing-2: 2px;
+	--spacing-3: 3px;
+	--spacing-4: 4px;
+	--spacing-6: 6px;
+	--spacing-8: 8px;
+	--spacing-10: 10px;
+	--spacing-12: 12px;
+	--spacing-16: 16px;
+	--spacing-24: 24px;
+	--spacing-32: 32px;
+	--spacing-36: 36px;
+	--spacing-40: 40px;
+	--spacing-48: 48px;
+	--spacing-64: 64px;
+	--spacing-80: 80px;
+	--spacing-96: 96px;
+	--spacing-180: 180px;
+
+	--width-32: 32px;
+	--width-36: 36px;
+	--width-10: 10px;
+
+	--max-width-600: 600px;
+	--max-width-640: 640px;
+	--max-width-720: 720px;
+	--max-width-800: 800px;
+	--max-width-960: 960px;
+	--max-width-1200: 1200px;
+
+	--border-width-1: 1px;
+
+	/* Typography scale */
+	--text-title-h1: 60px;
+	--text-title-h1--line-height: 64px;
+
+	--text-title-h2: 52px;
+	--text-title-h2--line-height: 56px;
+
+	--text-title-h3: 40px;
+	--text-title-h3--line-height: 44px;
+
+	--text-title-h4: 32px;
+	--text-title-h4--line-height: 36px;
+
+	--text-title-h5: 24px;
+	--text-title-h5--line-height: 32px;
+
+	--text-body-x-large: 20px;
+	--text-body-x-large--line-height: 28px;
+
+	--text-body-large: 16px;
+	--text-body-large--line-height: 24px;
+
+	--text-body-medium: 14px;
+	--text-body-medium--line-height: 20px;
+
+	--text-body-small: 13px;
+	--text-body-small--line-height: 20px;
+
+	--text-body-input: 15px;
+	--text-body-input--line-height: 24px;
+}
+
+/* Custom utilities & base styles */
+.text-gradient {
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: linear-gradient(to right, #0036fe, #5d85ff);
+}
+
+* {
+	border-radius: 0px;
+}
+
+.font-google {
+	font-family: var(--font-google-sans-flex);
+}
+
+.font-pixel-grid {
+	font-family: var(--font-geist-pixel-grid);
+	font-weight: normal;
+	text-shadow:
+		0.3px 0 0 currentColor,
+		-0.3px 0 0 currentColor;
+}
+
+.border-sharp {
+	border-radius: 0px;
+}
+
+.pricing-btn {
+	height: 40px;
+	min-height: 40px;
+	max-height: 40px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 24px;
+	box-sizing: border-box;
+}
+
+/* Markdown Content Renderer Styling */
+.markdown-content h1 {
+	font-size: 36px;
+	font-weight: 800;
+	margin-bottom: 24px;
+	color: var(--accent-black);
+}
+
+.markdown-content h2 {
+	font-size: 24px;
+	font-weight: 700;
+	margin-top: 40px;
+	margin-bottom: 16px;
+	color: var(--accent-black);
+	padding-bottom: 8px;
+	border: 1px solid var(--border-muted);
+}
+
+.markdown-content h3 {
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 24px;
+	margin-bottom: 12px;
+	color: var(--accent-black);
+}
+
+.markdown-content p {
+	margin-bottom: 16px;
+	line-height: 1.7;
+	color: rgba(38, 38, 38, 0.75);
+}
+
+.markdown-content ul {
+	margin-bottom: 16px;
+	padding-left: 20px;
+	list-style-type: disc;
+}
+
+.markdown-content ol {
+	margin-bottom: 16px;
+	padding-left: 20px;
+	list-style-type: decimal;
+}
+
+.markdown-content li {
+	margin-bottom: 8px;
+	color: rgba(38, 38, 38, 0.75);
+}
+
+.markdown-content pre {
+	background-color: var(--background-lighter);
+	border: 1px solid var(--border-loud);
+	padding: 16px;
+	overflow-x: auto;
+	margin-bottom: 24px;
+	font-family: var(--font-mono), monospace;
+	font-size: 13px;
+	color: var(--accent-black);
+}
+
+.markdown-content code {
+	background-color: var(--background-lighter);
+	border: 1px solid var(--border-muted);
+	padding: 2px 6px;
+	font-family: var(--font-mono), monospace;
+	font-size: 13px;
+	color: var(--heat-100);
+	font-weight: 500;
+}
+
+.markdown-content pre code {
+	background: transparent;
+	border: none;
+	padding: 0;
+	color: inherit;
+	font-weight: normal;
+}
+
+.markdown-content a {
+	color: var(--heat-100);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.markdown-content a:hover {
+	text-decoration: underline;
+}
+
+.markdown-content table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 24px;
+	text-align: left;
+	font-size: 14px;
+}
+
+.markdown-content th,
+.markdown-content td {
+	padding: 12px;
+	border: 1px solid var(--border-loud);
+}
+
+.markdown-content th {
+	background-color: var(--background-lighter);
+	font-weight: bold;
+}
+
+.markdown-content tr:nth-child(even) {
+	background-color: rgba(38, 38, 38, 0.02);
+}

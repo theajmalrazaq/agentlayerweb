@@ -1,0 +1,184 @@
+@import url("https://fonts.cdnfonts.com/css/google-sans");
+@import "tailwindcss";
+
+@font-face {
+	font-family: "GeistPixel";
+	src: url("/fonts/geist-pixel/GeistPixel-Square.woff2?v=2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@theme {
+	--color-heat-4: rgba(0, 54, 254, 0.04);
+	--color-heat-10: rgba(0, 54, 254, 0.1);
+	--color-heat-20: rgba(0, 54, 254, 0.2);
+	--color-heat-100: #0036fe;
+
+	--color-accent-black: #262626;
+	--color-accent-white: #ffffff;
+	--color-accent-amethyst: #9061ff;
+	--color-accent-bluetron: #2a6dfb;
+	--color-accent-crimson: #eb3424;
+	--color-accent-forest: #42c366;
+	--color-accent-honey: #ecb730;
+
+	/* Light Theme UI variables */
+	--color-border-faint: rgba(38, 38, 38, 0.03);
+	--color-border-muted: rgba(38, 38, 38, 0.06);
+	--color-border-loud: rgba(38, 38, 38, 0.12);
+	--color-background-lighter: #f4f4f5;
+	--color-background-base: #ffffff;
+
+	/* Spacings */
+	--spacing-4: 4px;
+	--spacing-8: 8px;
+	--spacing-12: 12px;
+	--spacing-16: 16px;
+	--spacing-20: 20px;
+	--spacing-24: 24px;
+	--spacing-30: 30px;
+	--spacing-32: 32px;
+	--spacing-36: 36px;
+	--spacing-40: 40px;
+	--spacing-48: 48px;
+	--spacing-64: 64px;
+	--spacing-80: 80px;
+	--spacing-96: 96px;
+	--spacing-128: 128px;
+	--spacing-150: 600px;
+	--spacing-160: 640px;
+	--spacing-180: 720px;
+	--spacing-200: 800px;
+	--spacing-240: 960px;
+	--spacing-300: 1200px;
+
+	/* Radius */
+	--radius-4: 0px;
+	--radius-6: 0px;
+	--radius-8: 0px;
+	--radius-12: 0px;
+	--radius-16: 0px;
+	--radius-32: 0px;
+}
+
+@utility text-title-h1 {
+	font-size: 60px;
+	line-height: 64px;
+	letter-spacing: -0.3px;
+	font-weight: 700;
+	font-family: "GeistPixel", monospace;
+}
+@utility text-title-h2 {
+	font-size: 52px;
+	line-height: 56px;
+	letter-spacing: -0.52px;
+	font-weight: 700;
+	font-family: "GeistPixel", monospace;
+}
+@utility text-title-h3 {
+	font-size: 40px;
+	line-height: 44px;
+	letter-spacing: -0.4px;
+	font-weight: 600;
+	font-family: "GeistPixel", monospace;
+}
+@utility text-title-h4 {
+	font-size: 32px;
+	line-height: 36px;
+	letter-spacing: -0.32px;
+	font-weight: 600;
+	font-family: "GeistPixel", monospace;
+}
+@utility text-title-h5 {
+	font-size: 24px;
+	line-height: 32px;
+	letter-spacing: -0.24px;
+	font-weight: 600;
+	font-family: "GeistPixel", monospace;
+}
+@utility text-body-x-large {
+	font-size: 20px;
+	line-height: 28px;
+	letter-spacing: -0.1px;
+}
+@utility text-body-large {
+	font-size: 16px;
+	line-height: 24px;
+}
+@utility text-body-medium {
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.14px;
+}
+@utility text-body-small {
+	font-size: 13px;
+	line-height: 20px;
+}
+@utility text-body-input {
+	font-size: 15px;
+	line-height: 24px;
+}
+
+@utility animate-fade-in {
+	animation: fade-in 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+@utility animate-fade-up {
+	animation: fade-up 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fade-up {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-pixel {
+	font-family: "GeistPixel", monospace;
+}
+
+body {
+	background-color: #ffffff;
+	color: #262626;
+	font-family: "Product Sans", "Google Sans", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.desktop-nav {
+	display: none;
+}
+
+.desktop-cta {
+	display: none;
+}
+
+@media (min-width: 640px) {
+	.desktop-cta {
+		display: inline-flex;
+	}
+}
+
+@media (min-width: 768px) {
+	.desktop-nav {
+		display: flex;
+	}
+}
