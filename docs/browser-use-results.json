@@ -1,78 +1,44 @@
 {
-  "gemini-3.5-flash-extra-low": {
+  "claude-haiku-4-5": {
     "human": {
-      "duration": "42.15",
-      "steps": 15,
-      "tokens": 79708,
-      "cost": "0.006142"
-    },
-    "agent": {
-      "duration": "24.15",
-      "steps": 11,
-      "tokens": 14867,
-      "cost": "0.001216"
-    },
-    "comparison": {
-      "speedup": "1.75x",
-      "tokenSavings": "81.3%",
-      "costSavings": "80.2%"
-    }
-  },
-  "gemini-3.5-flash-low": {
-    "human": {
-      "duration": "24.15",
-      "steps": 11,
-      "tokens": 54544,
-      "cost": "0.004180"
-    },
-    "agent": {
-      "duration": "54.27",
+      "success": false,
+      "duration": "76.11",
       "steps": 12,
-      "tokens": 22854,
-      "cost": "0.001828"
-    },
-    "comparison": {
-      "speedup": "0.45x",
-      "tokenSavings": "58.1%",
-      "costSavings": "56.3%"
-    }
-  },
-  "gemini-3-flash-agent": {
-    "human": {
-      "duration": "38.91",
-      "steps": 15,
-      "tokens": 63935,
-      "cost": "0.004964"
+      "tokens": 135110,
+      "cost": "0.010633"
     },
     "agent": {
-      "duration": "19.86",
-      "steps": 10,
-      "tokens": 15210,
-      "cost": "0.001238"
+      "success": true,
+      "duration": "34.71",
+      "steps": 8,
+      "tokens": 13346,
+      "cost": "0.001309"
     },
     "comparison": {
-      "speedup": "1.96x",
-      "tokenSavings": "76.2%",
-      "costSavings": "75.1%"
+      "speedup": "N/A",
+      "tokenSavings": "N/A",
+      "costSavings": "N/A"
     }
   },
-  "gemini-3.1-pro-low": {
+  "gpt-4o-mini": {
     "human": {
-      "duration": "65.07",
-      "steps": 15,
-      "tokens": 82310,
-      "cost": "0.006327"
+      "success": false,
+      "duration": "52.33",
+      "steps": 11,
+      "tokens": 65468,
+      "cost": "0.005087"
     },
     "agent": {
-      "duration": "20.63",
+      "success": true,
+      "duration": "15.49",
       "steps": 6,
-      "tokens": 7154,
-      "cost": "0.000597"
+      "tokens": 2807,
+      "cost": "0.000260"
     },
     "comparison": {
-      "speedup": "3.15x",
-      "tokenSavings": "91.3%",
-      "costSavings": "90.6%"
+      "speedup": "N/A",
+      "tokenSavings": "N/A",
+      "costSavings": "N/A"
     }
   }
 }

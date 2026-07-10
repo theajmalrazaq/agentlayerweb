@@ -396,30 +396,30 @@ export default function Home() {
 									</tr>
 								</thead>
 								<tbody className="divide-y divide-[#262626]/8">
-									{/* Model 1 */}
+									{/* Model 1: claude-haiku-4-5 */}
 									<tr className="hover:bg-[#262626]/2">
 										<td className="p-16 font-semibold align-top" rowSpan={2}>
-											gemini-3.5-flash-extra-low
+											claude-haiku-4-5
 										</td>
 										<td className="p-16 text-accent-black/60">
 											Human Page (Raw DOM)
 										</td>
-										<td className="p-16">42.15s</td>
-										<td className="p-16">15 steps</td>
-										<td className="p-16 font-mono text-xs">79,708</td>
-										<td className="p-16 font-mono text-xs">$0.006142</td>
+										<td className="p-16">76.11s</td>
+										<td className="p-16">12 steps</td>
+										<td className="p-16 font-mono text-xs">135,110</td>
+										<td className="p-16 font-mono text-xs">$0.010633</td>
 										<td
 											className="p-16 text-right font-semibold text-heat-100 align-top"
 											rowSpan={2}
 										>
 											<span className="block text-body-medium">
-												1.75x speedup
+												2.19x speedup
 											</span>
 											<span className="block text-xs text-[#0036FE] font-medium">
-												81.3% token savings
+												90.1% token savings
 											</span>
 											<span className="block text-xs text-[#0036FE] font-medium">
-												80.2% cost reduction
+												87.7% cost reduction
 											</span>
 										</td>
 									</tr>
@@ -428,88 +428,43 @@ export default function Home() {
 											Agent Page (MCP)
 										</td>
 										<td className="p-16 font-semibold text-[#0036FE]">
-											24.15s
+											34.71s
 										</td>
 										<td className="p-16 font-semibold text-[#0036FE]">
-											11 steps
+											8 steps
 										</td>
 										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											14,867
+											13,346
 										</td>
 										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											$0.001216
+											$0.001309
 										</td>
 									</tr>
 
-									{/* Model 2 */}
+									{/* Model 2: gpt-4o-mini */}
 									<tr className="hover:bg-[#262626]/2">
 										<td className="p-16 font-semibold align-top" rowSpan={2}>
-											gemini-3.5-flash-low
+											gpt-4o-mini
 										</td>
 										<td className="p-16 text-accent-black/60">
 											Human Page (Raw DOM)
 										</td>
-										<td className="p-16">24.15s</td>
+										<td className="p-16">52.33s</td>
 										<td className="p-16">11 steps</td>
-										<td className="p-16 font-mono text-xs">54,544</td>
-										<td className="p-16 font-mono text-xs">$0.004180</td>
-										<td
-											className="p-16 text-right font-semibold text-accent-black/60 align-top"
-											rowSpan={2}
-										>
-											<span className="block text-body-medium">
-												2.25x slowdown
-											</span>
-											<span className="block text-xs text-[#0036FE] font-medium">
-												58.1% token savings
-											</span>
-											<span className="block text-xs text-[#0036FE] font-medium">
-												56.3% cost reduction
-											</span>
-										</td>
-									</tr>
-									<tr className="bg-[#0036FE]/2 hover:bg-[#0036FE]/4">
-										<td className="p-16 font-semibold text-[#0036FE]">
-											Agent Page (MCP)
-										</td>
-										<td className="p-16 font-semibold text-[#0036FE]">
-											54.27s
-										</td>
-										<td className="p-16 font-semibold text-[#0036FE]">
-											12 steps
-										</td>
-										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											22,854
-										</td>
-										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											$0.001828
-										</td>
-									</tr>
-
-									{/* Model 3 */}
-									<tr className="hover:bg-[#262626]/2">
-										<td className="p-16 font-semibold align-top" rowSpan={2}>
-											gemini-3-flash-agent
-										</td>
-										<td className="p-16 text-accent-black/60">
-											Human Page (Raw DOM)
-										</td>
-										<td className="p-16">38.91s</td>
-										<td className="p-16">15 steps</td>
-										<td className="p-16 font-mono text-xs">63,935</td>
-										<td className="p-16 font-mono text-xs">$0.004964</td>
+										<td className="p-16 font-mono text-xs">65,468</td>
+										<td className="p-16 font-mono text-xs">$0.005087</td>
 										<td
 											className="p-16 text-right font-semibold text-heat-100 align-top"
 											rowSpan={2}
 										>
 											<span className="block text-body-medium">
-												1.96x speedup
+												3.38x speedup
 											</span>
 											<span className="block text-xs text-[#0036FE] font-medium">
-												76.2% token savings
+												95.7% token savings
 											</span>
 											<span className="block text-xs text-[#0036FE] font-medium">
-												75.1% cost reduction
+												94.9% cost reduction
 											</span>
 										</td>
 									</tr>
@@ -518,61 +473,16 @@ export default function Home() {
 											Agent Page (MCP)
 										</td>
 										<td className="p-16 font-semibold text-[#0036FE]">
-											19.86s
-										</td>
-										<td className="p-16 font-semibold text-[#0036FE]">
-											10 steps
-										</td>
-										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											15,210
-										</td>
-										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											$0.001238
-										</td>
-									</tr>
-
-									{/* Model 4 */}
-									<tr className="hover:bg-[#262626]/2">
-										<td className="p-16 font-semibold align-top" rowSpan={2}>
-											gemini-3.1-pro-low
-										</td>
-										<td className="p-16 text-accent-black/60">
-											Human Page (Raw DOM)
-										</td>
-										<td className="p-16">65.07s</td>
-										<td className="p-16">15 steps</td>
-										<td className="p-16 font-mono text-xs">82,310</td>
-										<td className="p-16 font-mono text-xs">$0.006327</td>
-										<td
-											className="p-16 text-right font-bold text-heat-100 align-top"
-											rowSpan={2}
-										>
-											<span className="block text-body-medium">
-												3.15x speedup
-											</span>
-											<span className="block text-xs text-[#0036FE] font-bold">
-												91.3% token savings
-											</span>
-											<span className="block text-xs text-[#0036FE] font-bold">
-												90.6% cost reduction
-											</span>
-										</td>
-									</tr>
-									<tr className="bg-[#0036FE]/2 hover:bg-[#0036FE]/4">
-										<td className="p-16 font-semibold text-[#0036FE]">
-											Agent Page (MCP)
-										</td>
-										<td className="p-16 font-semibold text-[#0036FE]">
-											20.63s
+											15.49s
 										</td>
 										<td className="p-16 font-semibold text-[#0036FE]">
 											6 steps
 										</td>
 										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											7,154
+											2,807
 										</td>
 										<td className="p-16 font-mono text-xs font-semibold text-[#0036FE]">
-											$0.000597
+											$0.000260
 										</td>
 									</tr>
 								</tbody>
