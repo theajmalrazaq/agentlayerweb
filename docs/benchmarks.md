@@ -37,3 +37,58 @@ To compare the approaches fairly, both scenarios run using the **Model Context P
 1. **Dramatic Token Savings:** By shifting from raw DOM traversal to high-level semantic tools, models like `gpt-4o-mini` achieve over **95.7% token savings**. This drastically reduces prompt context saturation and prevents agent confusion.
 2. **Reduced API Costs:** API costs drop by up to **94.9%** because the agent does not need to repeatedly query large HTML sources or screenshots for navigation logic.
 3. **Execution Speedups:** The model demonstrates a **3.38x speedup**, completing the multi-step form and validation flow in just **6 steps** (compared to 11 steps on the visually optimized human page).
+
+---
+
+## 2. Scraping & Data Extraction Benchmarks (Crawl4AI)
+
+Web scraping is a core capability of AI agents. To test how AgentLayerWeb affects scraping efficiency, we benchmarked the extraction of the onboarding portal layout using **Crawl4AI** and the `tiktoken` library (average of 3 runs). The results are saved in [docs/crawl4ai-benchmark-results.json](./docs/crawl4ai-benchmark-results.json).
+
+### Full Page Scraping Analysis
+When scraping the full dashboard, traditional HTML is bloated with visual presentation classes (like Tailwind utilities) and visual structural wrappers. AgentLayerWeb pages allow scrapers to completely discard the styling layer while preserving semantic context:
+
+| Metric | Human Page (Raw HTML) | AgentLayer Page (Cleaned & Stripped AX HTML)* | Savings / Speedup |
+| :--- | :--- | :--- | :--- |
+| **Crawl Duration** | 1.36s | 1.01s | ⚡ **1.35x speedup** |
+| **Page Size (Tokens)** | 9,445 tokens | 2,620 tokens | 📉 **72.3% token savings** |
+| **Estimated Input Cost** | $0.000708 | $0.000197 | 💰 **72.3% cost reduction** |
+
+### Form Element Only Extraction
+If the scraper targets only the primary interactive form (`#new-client-form`):
+
+| Metric | Human Form (Raw HTML) | AgentLayer Form (Stripped Class/Style AX HTML)* | Savings / Speedup |
+| :--- | :--- | :--- | :--- |
+| **Form Size (Tokens)** | 659 tokens | 418 tokens | 📉 **36.6% token savings** |
+| **Estimated Input Cost** | $0.000049 | $0.000031 | 💰 **36.6% cost reduction** |
+
+*\*Note: Cleaned & Stripped AX HTML refers to removing all `class` and `style` attributes, scripts, SVGs, and visual wrappers. Because the AgentLayer page uses semantic `data-agent-*` metadata, the crawler can strip all presentation styling without degrading the agent's comprehension.*
+
+---
+
+## 3. Scraping with AgentLayerWeb: AX vs. UX
+
+Scraping visually optimized human layouts (UX) presents major problems for AI models, which are solved by the Agent Experience (AX) layout model:
+
+### A. Class-Free DOM Parsing
+Traditional HTML requires styling classes to provide visual hierarchy hints to humans. However, style class strings (e.g. `className="w-full px-12 py-8 bg-background-base border border-border-loud..."`) bloat the page size and consume unnecessary context window tokens.
+* **The AX Solution**: Because AgentLayerWeb annotates elements directly with semantic descriptions (e.g. `data-agent-field="billing_email"`), your crawler can completely strip the `class` and `style` attributes before passing the HTML to the LLM.
+* **The Impact**: This yields a **72.3% reduction** in input tokens. Scrapers operate on a clean semantic tree, cutting API cost and latency drastically.
+
+### B. Selector & Locator Stability
+Visually optimized pages frequently change class names, element nesting, or IDs during framework upgrades or site redesigns.
+* **The AX Solution**: Scrapers use stable selectors targeting developer-defined agent attributes (e.g. `css=[data-agent-field="company_name"]` or `css=[data-agent-role="form"]`).
+* **The Impact**: Web scrapers remain immune to visual refreshes and design updates. Locators continue to work as long as the underlying page logic doesn't change.
+
+### C. Exposing Form Schemas Directly
+To scrape form specifications, agents must read label tags, associate them with inputs, and guess validator constraints.
+* **The AX Solution**: AgentLayerWeb forms provide explicit validation metadata:
+  ```html
+  <input
+    type="text"
+    data-agent-field="company_name"
+    data-agent-label="Company legal corporate name"
+    data-agent-required="true"
+    data-agent-type="text"
+  />
+  ```
+* **The Impact**: Crawling frameworks can instantly convert these inputs into clean, JSON-schema tool parameters, enabling AI scrapers to interact with pages as if they were structured Web APIs.

@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-07-12T13:33:59Z",
+  "full_page": {
+    "human": {
+      "duration": 1.357,
+      "tokens": 9445,
+      "cost": 0.00070838
+    },
+    "agent": {
+      "duration": 1.005,
+      "tokens": 2620,
+      "cost": 0.0001965
+    },
+    "savings": {
+      "speedup": "1.35x",
+      "token_savings_pct": 72.3,
+      "cost_savings_pct": 72.3
+    }
+  },
+  "form_only": {
+    "human": {
+      "tokens": 659,
+      "cost": 4.942e-05
+    },
+    "agent": {
+      "tokens": 418,
+      "cost": 3.135e-05
+    },
+    "savings": {
+      "token_savings_pct": 36.6,
+      "cost_savings_pct": 36.6
+    }
+  }
+}
